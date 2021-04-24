@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-z$pme==cr0nw)hv(1cr#2z3lnh-suwf23t0hc2de12rh!nel&7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "0.0.0.0"]
 
 
 # Application definition
@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'meeting_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql', # on utilise l'adaptateur postgresql
+        'NAME': 'dbmeeting', # le nom de notre base de donnees creee precedemment
+        'USER': 'huin', # attention : remplacez par votre nom d'utilisateur
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '5432',
     }
 }
 
