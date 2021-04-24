@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Détails de la réunion{% endblock %}
+{% block content %}
+<h1> {{meeting.title}}</h1>
+<p>
+    Cette réunion a été organisée le {{meeting.date}}, à {{meeting.start_time}} dans la
+    salle <strong>{{meeting.room}}</strong>.
+</p>
+
+<p>
+    Retour à l'<a href="{% url 'home' %}">accueil</a>
+</p>
+
+{% endblock %}

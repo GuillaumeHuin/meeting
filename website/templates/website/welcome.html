@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Bienvenue les amis!{% endblock %}
+{% block content %}
+    <h1> Bienvenue sur l'app de réunion !</h1>
+    <p>
+        Ceci est un prototype d'app avec <em>Django</em>. On peut retrouver
+        le cours sur <a href="https://www.pluralsight.com"> Pluralsight </a>.
+    </p>
+   <h2>Réunions</h2>
+    <ul>
+        {% for meeting in meetings %}
+        <li>
+            <a href="{% url 'detail' meeting.id %}">
+                {{ meeting.title }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+        <h4>Ajout d'une réunion</h4>
+            <a href="{% url 'nouveau' %}">nouvelle réunion</a>
+    <h2>Liste des salles</h2>
+    <li>
+        <a href="{% url 'rooms' %}">salles</a>
+    </li>
+
+<img src='../../static/website/Airsoft.jpg' width="150px">
+
+{% endblock %}

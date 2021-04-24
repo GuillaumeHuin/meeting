@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Nouvelle réunion{% endblock %}
+
+{% block content %}
+
+<h1>Organisation d'une nouvelle réunion</h1>
+<form method="post">
+    <table>
+        {{ form }}
+    </table>
+    {% csrf_token %}
+    <button type="submit">Créer</button>
+</form>
+
+{% endblock %}
